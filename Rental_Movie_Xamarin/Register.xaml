@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rental_Movie_Xamarin.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Register" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <ActivityIndicator x:Name="spinner" Color="Orange" IsRunning="False"  IsVisible="false"/>
+            <Entry x:Name="firstName"  Placeholder="Firstname" ReturnType="Next" IsTextPredictionEnabled="false" />
+            <Entry x:Name="lastName"   Placeholder="Lastname"  ReturnType="Next" IsTextPredictionEnabled="false" />
+            <Entry x:Name="mail"   Placeholder="Mail" Keyboard="Email" ReturnType="Next" IsTextPredictionEnabled="false" />
+            <Entry x:Name="pwd"   Placeholder="Password"  ReturnType="Next" IsPassword="true" IsTextPredictionEnabled="false"/>
+            <Entry x:Name="pwd2"  Completed="OnRegister" Placeholder="Password" IsPassword="true" IsTextPredictionEnabled="false" />
+            <Button Text="OK" Clicked="OnRegister"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

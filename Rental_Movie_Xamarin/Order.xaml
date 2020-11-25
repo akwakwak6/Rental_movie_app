@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rental_Movie_Xamarin.Order"
+             Title="Yours orders">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator x:Name="spinner" Color="Orange" IsRunning="False"  IsVisible="false"/>
+
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="ID" FontAttributes="Bold" FontSize="Medium"/>
+                <Label 
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold" FontSize="Medium"
+                    Grid.Column="1" 
+                    Text="date" />
+                <Label 
+                    FontAttributes="Bold" FontSize="Medium"
+                    Grid.Column="2" 
+                    Text="Total" />
+
+            </Grid>
+
+            <ListView x:Name="list" SelectionMode="None" HasUnevenRows="true" ItemTapped="showDetailOrder" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Id}" />
+                                <Label 
+                                    HorizontalTextAlignment="Center"
+                                    Grid.Column="1" 
+                                    Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" />
+                                <Label 
+                                    Grid.Column="2" 
+                                    Text="{Binding TotalPrice, StringFormat='{0} $'}" />
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

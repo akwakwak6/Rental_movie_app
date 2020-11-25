@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rental_Movie_Xamarin.MoviesList"
+             Title="Movies">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Picker x:Name="picker" Title="Started by A" HorizontalOptions="Center" TitleColor="Red"/>
+                <Label Grid.Column="1" x:Name="countMovieList" HorizontalTextAlignment="Center" FontSize="Medium" />
+                <Button Grid.Column="2" Text="Filtter" Clicked="FillFilter" BackgroundColor="Cyan"/>
+            </Grid>
+            <ActivityIndicator x:Name="spinner" Color="Orange" IsRunning="False"  IsVisible="false"/>
+            <Label Text="No movie match with your search" IsVisible="false" x:Name="noMovieLabel" />
+            <ListView x:Name="list" ItemTapped="showDetailMovie" SelectionMode="None" HasUnevenRows="true" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    Text="{Binding Title}"
+                                    FontAttributes="Bold" />
+                                <Label 
+                                    Grid.Row="1"
+                                    Text="{Binding Price, StringFormat='{0} $'}"
+                                    VerticalOptions="End" />
+                                <Button 
+                                    Grid.RowSpan="2" 
+                                    Grid.Column="2" 
+                                    BackgroundColor="{Binding BtnColor}"
+                                    Text="{Binding BtnText}" 
+                                    CommandParameter="{Binding}"
+                                    Clicked="AddInCart" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="My cart" x:Name="btnMyCart" BackgroundColor="Blue" HorizontalOptions="Center" Clicked="GoToMyCart" Margin="10"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Filter"
+             x:Class="Rental_Movie_Xamarin.FillFilter">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="10" />
+            <Picker x:Name="pickerCategory" Title="Category" HorizontalOptions="Center" WidthRequest="150" Margin="5"/>
+            <Picker x:Name="pickerLangage" Title="Langage" HorizontalOptions="Center" WidthRequest="150" Margin="5"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="5">
+                <Picker x:Name="picActorStartBy" Title="Start by" HorizontalOptions="Center" WidthRequest="50"/>
+                <Picker x:Name="picActorName" Title="Actors" HorizontalOptions="Center" WidthRequest="150"/>
+            </StackLayout>
+            <Entry x:Name="title" HorizontalTextAlignment="Center" Placeholder="Title" ReturnType="Next"  Margin="100,10"/>
+            <Entry x:Name="keyWords" Completed="GetMovieListFilted" HorizontalTextAlignment="Center" Placeholder="Key words"  Margin="100,10"/>
+            <Button Text="OK" x:Name="btnOk"  Clicked="GetMovieListFilted" Margin="100,40" BackgroundColor="Blue"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

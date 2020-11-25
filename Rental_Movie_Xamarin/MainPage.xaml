@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rental_Movie_Xamarin.MainPage"
+             BackgroundColor="AntiqueWhite"
+             Title="Home">
+
+    <StackLayout>
+        <Frame BackgroundColor="#1976D2" CornerRadius="0">
+            <Label x:Name="mainLabel" Text="Welcome to Rental movies!" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+        </Frame>
+        <ActivityIndicator x:Name="spinner" Color="Orange" IsRunning="False" IsVisible="false"/>
+        <StackLayout Margin="5"/>
+        <Button Text="Movies"   Clicked="MoviesButtton" Margin="50,5" BackgroundColor="RoyalBlue"/>
+        <StackLayout Margin="10"/>
+        <Entry x:Name="mail" Text="m@m" HorizontalTextAlignment="Center" Placeholder="Mail" Keyboard="Email" ReturnType="Next" IsTextPredictionEnabled="false"  Margin="100,10"/>
+        <Entry x:Name="pwd" Text="pwd" HorizontalTextAlignment="Center" Completed="logIn" Placeholder="Password" IsPassword="true" IsTextPredictionEnabled="false"  Margin="100,10"/>
+        <Button x:Name="btn_login_in" Text="Sign in"  Clicked="logIn" Margin="100,10" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="btn_cart" Text="My cart"   Clicked="showMyCart" IsVisible="false" Margin="100,10" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="btn_order" Text="My orders"   Clicked="showMyOrder" IsVisible="false" Margin="100,10" BackgroundColor="RoyalBlue"/>
+        <Button Text="Register" x:Name="btn_register"  Clicked="RegisterButtton" Margin="100,40" BackgroundColor="Blue"/>
+
+    </StackLayout>
+
+</ContentPage>
